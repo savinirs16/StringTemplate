@@ -1,0 +1,33 @@
+group displayTable;
+
+renderHTMLTable(dynamicColumnNameST) ::= <<
+
+    group htmlDynamicTemplate;
+         mainHTMLTemplate(list) ::= <<
+              <html>
+              <head></head>
+              <body>
+              <table border="1">
+                 <tr>  \$list:each()\$ </tr>
+              </table>
+              </body>
+              </html>
+          >\>
+
+          each(columndynamicMap)::=<<
+          $dynamicColumnNameST$
+          >\>
+>>
+
+
+
+eachRowST(listofcolumns) ::= <<
+$listofcolumns:eachColumnST();separator=""$
+>>
+
+eachColumnST(columndynamicMap) ::= <<
+<td>\$columndynamicMap.$columndynamicMap$\$</td>
+>>
+
+
+

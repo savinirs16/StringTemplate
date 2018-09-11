@@ -1,0 +1,18 @@
+group dynamicSTResolution;
+
+wishAllTemplate(informationListOfMaps) ::= <<
+$informationListOfMaps:WelcomeTemplate(); separator="\n"$
+>>
+
+WelcomeTemplate(column) ::= <<
+$(column.country)(column)$
+>>
+
+india(informationMap) ::= <<
+Welcome, $informationMap.Name$, is from India $if(informationMap.Gender)$ $informationMap.Gender$ $else$ Gender not available $endif$
+>>
+
+US(informationMap) ::= <<
+Welcome, $informationMap.Name$, is from USA $if(informationMap.Gender)$ $informationMap.Gender$ $else$ Gender not available $endif$
+>>
+

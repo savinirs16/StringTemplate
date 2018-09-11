@@ -1,0 +1,17 @@
+group basichtml;
+
+renderHTMLTable(list_map_of_students) ::= <<
+<html>
+<head></head>
+<body>
+<table border="1">
+$list_map_of_students:getInfoOfEachStudent();separator="\n"$
+</table>
+</body>
+</html>
+>>
+
+
+getInfoOfEachStudent(studentMapObject) ::= <<
+  <tr><td>$studentMapObject.name$</td><td>$studentMapObject.snumber$</td></tr>
+>>

@@ -1,0 +1,13 @@
+group createStatement;
+
+mainCreateStatement(schemaName,tableName,listOfData)::=<<
+
+create table $schemaName$.$tableName$(
+$listOfData:each();separator="\n"$
+)
+
+>>
+
+each(list)::=<<
+   $list.columnname$  $list.columntype$ $if(list.nextcolumn)$ , $else$ $endif$
+>>

@@ -1,0 +1,8 @@
+group createScriptgrp;
+
+mainCreateStatement(schemaName,tableName,map)::=<<
+
+create table $schemaName$.$tableName$(
+$map.keys:{k | $k$ $map.(k)$}; separator=",\n"$
+)
+>>

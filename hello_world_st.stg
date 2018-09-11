@@ -1,0 +1,8 @@
+group helloworld;
+
+WishGoodMorning(username) ::= <<
+GOOD MORNING ! $username$
+>>
+WishGoodAfternoon(username) ::= <<
+GOOD Afternoon ! $username$
+>>
